@@ -1,6 +1,11 @@
+---
+name: meta-prompt-orchestration
+description: Execution flow and decision tree for the meta-prompt skill. Use when implementing, debugging, tracing, or extending the meta-prompt skill's behaviour. Companion to the meta-prompt skill — load alongside it when you need to understand exactly what the skill does at each step.
+---
+
 # meta-prompt — Orchestration Chronology
 
-Companion to `skills/meta-prompt.md`. Documents the runtime execution flow of that skill — not a standalone skill, not a system prompt. Reference only.
+Companion to `skills/meta-prompt.md`. Documents the runtime execution flow of that skill.
 
 Execution sequence for every invocation of the meta-prompt skill.
 
