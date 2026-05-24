@@ -117,7 +117,7 @@ For any Claude feature, model ID, beta header, API param, or tool: fetch the mos
 |---|---|
 | Simple single-step | Plain instruction |
 | Role + defined output | Role + task + constraints + format |
-| Multiple inputs or parsed output | XML-tagged scaffold |
+| Multiple inputs or parsed output | Labelled sections with headers |
 
 **Four Ds** — check all four internally before writing. If any has a gap, surface it as a question first.
 
