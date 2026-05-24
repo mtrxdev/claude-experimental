@@ -1,5 +1,7 @@
 # meta-prompt — Orchestration Chronology
 
+Companion to `skills/meta-prompt.md`. Documents the runtime execution flow of that skill — not a standalone skill, not a system prompt. Reference only.
+
 Execution sequence for every invocation of the meta-prompt skill.
 
 ---
