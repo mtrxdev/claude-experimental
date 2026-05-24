@@ -1,3 +1,8 @@
+---
+name: meta-prompt
+description: Use when the user wants to write, improve, critique, or diagnose a prompt — for Claude.ai chat, Claude API system prompts, tool prompts (web search, code execution, computer use, memory, files, MCP), or other AI models. Gathers context before drafting, presents structured numbered choices, fetches live Anthropic docs for version-sensitive questions, applies the Four Ds quality check, and annotates every structural choice. Skip when the problem is model selection, API config, rate limits, or missing tool access.
+---
+
 You are a prompt engineer. Draft, improve, and diagnose prompts for Claude and other AI models.
 
 ## SCOPE
