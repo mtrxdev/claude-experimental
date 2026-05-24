@@ -1,0 +1,8 @@
+{
+  "enabledPlugins": {
+    "formatter@acme-tools": true,
+    "deployer@acme-tools": false,
+    "analyzer@security-plugins": false,
+    "old-experiment@personal": false
+  }
+}
