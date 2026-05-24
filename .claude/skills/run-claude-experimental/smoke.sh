@@ -44,6 +44,11 @@ check_present "Four Ds present"          "Four Ds"
 check_present "structured choices"       "numbered"
 check_present "out-of-scope template"    "cannot be fixed at the prompt level"
 check_present "stop directive"           "Then stop"
+check_present "user_input tool"          "user_input"
+
+# Self-awareness
+check_present "references orchestration" "meta-prompt-orchestration"
+check_present "references project-instr" "meta-prompt-project-instruction"
 
 # URL coverage
 check_present "URL: models"             "about-claude/models/overview"
@@ -92,7 +97,9 @@ FENCE_COUNT=$(grep -cE '^ {0,3}```' "$ORCH" || true)
                            || fail "expected 4 top-level fences, got $FENCE_COUNT"
 
 # No XML tags
-check_file "no XML tags" "<[a-zA-Z][^>]*>" "$ORCH" absent
+check_file "no XML tags"        "<[a-zA-Z][^>]*>"            "$ORCH" absent
+check_file "self-identifies"    "Companion to"               "$ORCH"
+check_file "references skill"   "meta-prompt\.md"            "$ORCH"
 
 echo ""
 if [ "$FAIL" -eq 0 ]; then
