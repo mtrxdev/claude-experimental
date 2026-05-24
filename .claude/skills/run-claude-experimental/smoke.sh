@@ -97,9 +97,11 @@ FENCE_COUNT=$(grep -cE '^ {0,3}```' "$ORCH" || true)
                            || fail "expected 4 top-level fences, got $FENCE_COUNT"
 
 # No XML tags
-check_file "no XML tags"        "<[a-zA-Z][^>]*>"            "$ORCH" absent
-check_file "self-identifies"    "Companion to"               "$ORCH"
-check_file "references skill"   "meta-prompt\.md"            "$ORCH"
+check_file "frontmatter: name"        "^name: meta-prompt-orchestration" "$ORCH"
+check_file "frontmatter: description" "^description: "                   "$ORCH"
+check_file "no XML tags"              "<[a-zA-Z][^>]*>"                  "$ORCH" absent
+check_file "companion reference"      "Companion to"                     "$ORCH"
+check_file "references skill"         "meta-prompt\.md"                  "$ORCH"
 
 echo ""
 if [ "$FAIL" -eq 0 ]; then
