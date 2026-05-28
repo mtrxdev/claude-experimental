@@ -6,3 +6,52 @@
     "old-experiment@personal": false
   }
 }
+{
+  "permissions": {
+    "allow": [
+      "Read", "Glob", "Grep", "LS", "Edit", "MultiEdit",
+      "Write(src/**)", "Write(tests/**)", "Write(docs/**)",
+      "Bash(npm run *)", "Bash(npm test *)", "Bash(npx tsc *)",
+      "Bash(npx prettier *)", "Bash(npx eslint *)",
+      "Bash(git status)", "Bash(git diff *)", "Bash(git log *)",
+      "Bash(git add *)", "Bash(git commit *)"
+    ],
+    "deny": [
+      "Read(**/.env*)",
+      "Read(**/.dev.vars*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Read(**/.npmrc)",
+      "Read(**/.pypirc)",
+      "Read(**/.ssh/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.azure/**)",
+      "Read(**/.gcloud/**)",
+      "Read(**/.docker/config.json)",
+      "Read(**/.kube/config)",
+      "Read(**/.gnupg/**)",
+      "Write(**/.env*)",
+      "Write(**/secrets/**)",
+      "Write(**/.ssh/**)",
+      "Write(.github/workflows/*)",
+      "Write(package-lock.json)",
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(nc *)",
+      "Bash(ssh *)",
+      "Bash(scp *)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)",
+      "Bash(npm publish*)",
+      "Bash(docker *)"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}
