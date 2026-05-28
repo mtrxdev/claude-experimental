@@ -10,7 +10,7 @@ description: >
   X", "help me write CLAUDE.md", "create a /command for", or wants to know
   whether something belongs in CLAUDE.md vs a skill vs a hook vs a workflow vs a
   prompt. Always use this skill before generating any Claude Code artifact.
-version: 2.1.0
+version: 2.1.1
 license: MIT
 allowed-tools: Read, WebFetch, Bash, Write
 ---
