@@ -11,7 +11,7 @@ durable over time:
   memory — it fetches the live official docs each run, so it stays correct even
   as new models and features ship.
 
-/ version: 2.1.0 · license: MIT /
+/ version: 2.1.1 · license: MIT /
 
 ---
 
@@ -39,7 +39,7 @@ claude-code-prompt-engineer/
 ├── LICENSE.txt                   MIT
 ├── CHANGELOG.md                  Version history
 ├── README.md                     This file
-├── test.sh                       CI test harness (13 checks; network-optional)
+├── test.sh                       CI harness (18 checks incl. doc-consistency; network-optional)
 ├── references/
 │   ├── prompt-principles.md      Canonical guide for all artifact types
 │   ├── model-guide.md            How to recommend models WITHOUT pinning a version
@@ -94,7 +94,7 @@ The validators are tested by a self-contained harness that does **not** touch
 the network, so it is safe for air-gapped pipelines:
 
 ```bash
-./test.sh            # 11 assertions; exit 0 = pass
+./test.sh            # 18 checks; exit 0 = pass
 ```
 
 Lint the shell scripts:
@@ -136,6 +136,15 @@ Exit-code contract for all scripts: `0` success, `1` bad arguments/environment,
   staleness is visible.
 - The `references/` files are a curated snapshot of the docs and will drift over
   time. Use WebFetch on the live doc page for confirmation when precision matters.
+
+## Internal consistency
+
+`test.sh` includes doc-consistency checks that fail the build if the files drift
+apart: the version must match across SKILL.md, README.md, and the top CHANGELOG
+entry; every script and reference must be cited in SKILL.md (no orphans); every
+file SKILL.md cites must exist (no dangling references); and no removed
+component may be referenced outside CHANGELOG history. Run `./test.sh` after any
+edit — it catches the "one file doesn't know another changed" class of bug.
 
 ---
 
